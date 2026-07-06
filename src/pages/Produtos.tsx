@@ -30,7 +30,7 @@ export default function Produtos() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1558704164-ab7ca0016c1f?w=1920&q=80')",
+              "url('/images/militares02.jpeg')",
           }}
         />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">

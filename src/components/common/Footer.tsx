@@ -7,7 +7,11 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <h3 className="text-white text-lg font-bold mb-4">ERCA</h3>
+            <img
+              src="/images/logo/logotipo.jpg-removebg.png"
+              alt="ERCA"
+              className="h-14 w-auto mb-4"
+            />
             <p className="text-sm leading-relaxed">
               Empresa de Rações de Combate de Angola. Alimentando quem protege a nação.
             </p>

@@ -1,5 +1,6 @@
 import type { Produto } from '../../data/produtos'
 import { HiArrowRight } from 'react-icons/hi'
+import { HiCamera } from 'react-icons/hi2'
 
 interface Props {
   produto: Produto
@@ -9,10 +10,9 @@ interface Props {
 export default function ProdutoCard({ produto, onVerMais }: Props) {
   return (
     <div className="group rounded-xl border border-cinza bg-white p-6 hover:shadow-lg hover:border-verde/30 transition-all flex flex-col">
-      <div
-        className="h-40 rounded-lg bg-cover bg-center mb-4"
-        style={{ backgroundImage: `url('${produto.imagem}')` }}
-      />
+      <div className="h-40 rounded-lg bg-cinza mb-4 flex items-center justify-center">
+        <HiCamera size={32} className="text-cinza-escuro/50" />
+      </div>
       <span
         className={`inline-self-start mb-3 rounded-full px-3 py-1 text-xs font-semibold ${
           produto.categoria === 'Individual'

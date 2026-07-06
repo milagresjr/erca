@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiX } from 'react-icons/hi'
+import { HiCamera } from 'react-icons/hi2'
 import { CONTATO } from '../../constants/contato'
 import type { Produto } from '../../data/produtos'
 
@@ -45,10 +46,9 @@ export default function ProdutoModal({ produto, onFechar }: Props) {
               <HiX size={20} />
             </button>
 
-            <div
-              className="h-48 rounded-lg bg-cover bg-center mb-4"
-              style={{ backgroundImage: `url('${produto.imagem}')` }}
-            />
+            <div className="h-48 rounded-lg bg-cinza mb-4 flex items-center justify-center">
+              <HiCamera size={40} className="text-cinza-escuro/50" />
+            </div>
             <span
               className={`inline-block rounded-full px-3 py-1 text-xs font-semibold mb-3 ${
                 produto.categoria === 'Individual'

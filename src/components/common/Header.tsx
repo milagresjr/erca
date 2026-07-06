@@ -12,13 +12,11 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-verde shadow-lg shadow-verde/20">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
         <Link to="/" className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-laranja text-white font-bold text-sm">
-            E
-          </div>
-          <div>
-            <span className="text-lg font-bold text-white tracking-tight leading-none block">ERCA</span>
-            <span className="text-[10px] text-white/60 uppercase tracking-widest leading-none block">Rações de Combate</span>
-          </div>
+          <img
+            src="/images/logo/logotipo.jpg-removebg.png"
+            alt="ERCA"
+            className="h-14 w-auto"
+          />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-1">

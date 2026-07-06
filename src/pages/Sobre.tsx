@@ -18,7 +18,7 @@ export default function Sobre() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{
             backgroundImage:
-              "url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&q=80')",
+              "url('/images/others/images.jpeg')",
           }}
         />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
@@ -63,8 +63,8 @@ export default function Sobre() {
               className="rounded-xl overflow-hidden h-96"
             >
               <img
-                src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80"
-                alt="Militares em operação"
+                src="/images/others/Comandos-Angolanos.jpeg"
+                alt="Comandos Angolanos"
                 className="w-full h-full object-cover"
                 loading="lazy"
               />

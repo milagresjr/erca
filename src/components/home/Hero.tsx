@@ -1,24 +1,63 @@
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { motion, AnimatePresence } from 'framer-motion'
 import { CONTATO } from '../../constants/contato'
 import { HiArrowRight } from 'react-icons/hi'
 
+const imagens = [
+  '/images/desfile-militar01.jpg',
+  '/images/militares02.jpeg',
+  '/images/militares03.jpeg',
+]
+
 export default function Hero() {
+  const [atual, setAtual] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setAtual((prev) => (prev + 1) % imagens.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [])
+
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1587329310686-91414b8e3cb7?w=1920&q=80')",
-        }}
-      />
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={atual}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 1, ease: 'easeInOut' }}
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url('${imagens[atual]}')` }}
+        />
+      </AnimatePresence>
+
       <div className="absolute inset-0 bg-gradient-to-r from-verde/90 via-verde/80 to-preto/70" />
+
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+        {imagens.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setAtual(i)}
+            className={`h-2 rounded-full transition-all ${
+              i === atual ? 'w-8 bg-laranja' : 'w-2 bg-white/50 hover:bg-white/80'
+            }`}
+            aria-label={`Imagem ${i + 1}`}
+          />
+        ))}
+      </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
         <div className="max-w-3xl">
+          <img
+            src="/images/logo/logotipo.jpg-removebg.png"
+            alt="ERCA"
+            className="h-16 sm:h-20 w-auto mb-6"
+          />
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            ERCA
-            <span className="block text-laranja mt-2">
+            <span className="block text-laranja">
               Alimentando quem protege a nação
             </span>
           </h1>
