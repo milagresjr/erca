@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { CONTATO } from '../../constants/contato'
 import { HiArrowRight } from 'react-icons/hi'
@@ -66,13 +65,13 @@ export default function Hero() {
             emergências e missões humanitárias em Angola.
           </p>
           <div className="flex flex-wrap gap-4">
-            <Link
-              to="/produtos"
+            <a
+              href="/produtos"
               className="inline-flex items-center gap-2 bg-laranja text-white px-6 py-3 rounded-lg font-semibold hover:bg-laranja/80 transition-colors shadow-lg"
             >
               Ver Produtos
               <HiArrowRight size={18} />
-            </Link>
+            </a>
             <a
               href={CONTATO.whatsappLink}
               target="_blank"

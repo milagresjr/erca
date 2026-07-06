@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { CONTATO, NAV_LINKS } from '../../constants/contato'
 
 export default function Footer() {
@@ -22,12 +21,12 @@ export default function Footer() {
             <ul className="space-y-2">
               {NAV_LINKS.map((link) => (
                 <li key={link.to}>
-                  <Link
-                    to={link.to}
+                  <a
+                    href={link.to}
                     className="text-sm text-cinza-escuro hover:text-laranja transition-colors"
                   >
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

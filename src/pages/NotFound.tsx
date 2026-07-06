@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 
 export default function NotFound() {
@@ -17,12 +16,12 @@ export default function NotFound() {
           <p className="text-cinza-escuro mb-8 max-w-md mx-auto">
             A página que procura não existe ou foi movida.
           </p>
-          <Link
-            to="/"
+          <a
+            href="/"
             className="inline-flex items-center gap-2 bg-verde text-white px-6 py-3 rounded-lg font-semibold hover:bg-verde/80 transition-colors"
           >
             Voltar ao Início
-          </Link>
+          </a>
         </div>
       </section>
     </>

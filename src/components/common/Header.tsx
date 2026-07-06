@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { NavLink, Link } from 'react-router-dom'
 import { HiMenu, HiX } from 'react-icons/hi'
 import { BsWhatsapp } from 'react-icons/bs'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -11,40 +10,23 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-verde shadow-lg shadow-verde/20">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
-        <Link to="/" className="flex items-center gap-3">
+        <a href="/" className="flex items-center gap-3">
           <img
             src="/images/logo/logotipo.jpg-removebg.png"
             alt="ERCA"
             className="h-14 w-auto"
           />
-        </Link>
+        </a>
 
         <nav className="hidden lg:flex items-center gap-1">
           {NAV_LINKS.map((link) => (
-            <NavLink
+            <a
               key={link.to}
-              to={link.to}
-              end={link.to === '/'}
-              className={({ isActive }) =>
-                `relative px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  isActive
-                    ? 'text-laranja'
-                    : 'text-white/80 hover:text-white hover:bg-white/10'
-                }`
-              }
+              href={link.to}
+              className="relative px-3 py-2 rounded-lg text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 transition-colors"
             >
-              {({ isActive }) => (
-                <>
-                  {link.label}
-                  {isActive && (
-                    <motion.span
-                      layoutId="nav-indicator"
-                      className="absolute -bottom-1 left-2 right-2 h-0.5 bg-laranja rounded-full"
-                    />
-                  )}
-                </>
-              )}
-            </NavLink>
+              {link.label}
+            </a>
           ))}
         </nav>
 
@@ -79,21 +61,14 @@ export default function Header() {
           >
             <div className="px-4 py-3 space-y-1">
               {NAV_LINKS.map((link) => (
-                <NavLink
+                <a
                   key={link.to}
-                  to={link.to}
-                  end={link.to === '/'}
+                  href={link.to}
                   onClick={() => setMenuOpen(false)}
-                  className={({ isActive }) =>
-                    `block px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                      isActive
-                        ? 'text-laranja bg-white/10'
-                        : 'text-white/80 hover:text-white hover:bg-white/10'
-                    }`
-                  }
+                  className="block px-3 py-2 rounded-lg text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 transition-colors"
                 >
                   {link.label}
-                </NavLink>
+                </a>
               ))}
               <hr className="border-white/10 my-2" />
               <a
