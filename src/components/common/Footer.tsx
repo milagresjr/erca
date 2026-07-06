@@ -1,0 +1,67 @@
+import { Link } from 'react-router-dom'
+import { CONTATO, NAV_LINKS } from '../../constants/contato'
+
+export default function Footer() {
+  return (
+    <footer className="bg-preto text-cinza-escuro">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <h3 className="text-white text-lg font-bold mb-4">ERCA</h3>
+            <p className="text-sm leading-relaxed">
+              Empresa de Rações de Combate de Angola. Alimentando quem protege a nação.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-white font-semibold mb-4">Links</h4>
+            <ul className="space-y-2">
+              {NAV_LINKS.map((link) => (
+                <li key={link.to}>
+                  <Link
+                    to={link.to}
+                    className="text-sm text-cinza-escuro hover:text-laranja transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-semibold mb-4">Contactos</h4>
+            <ul className="space-y-2 text-sm">
+              {CONTATO.telefones.map((tel) => (
+                <li key={tel}>{tel}</li>
+              ))}
+              <li>
+                <a
+                  href={`mailto:${CONTATO.email}`}
+                  className="text-cinza-escuro hover:text-laranja transition-colors"
+                >
+                  {CONTATO.email}
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="text-white font-semibold mb-4">Localização</h4>
+            <p className="text-sm">{CONTATO.endereco}</p>
+            <p className="text-sm mt-2">NIF: {CONTATO.nif}</p>
+          </div>
+        </div>
+
+        <div className="mt-10 pt-8 border-t border-verde/20 text-center">
+          <p className="text-sm text-laranja font-semibold mb-2">
+            {CONTATO.slogan}
+          </p>
+          <p className="text-xs text-cinza-escuro">
+            &copy; {new Date().getFullYear()} ERCA. Todos os direitos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+  )
+}

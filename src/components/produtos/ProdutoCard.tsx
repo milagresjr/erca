@@ -1,0 +1,39 @@
+import type { Produto } from '../../data/produtos'
+import { HiArrowRight } from 'react-icons/hi'
+
+interface Props {
+  produto: Produto
+  onVerMais: (produto: Produto) => void
+}
+
+export default function ProdutoCard({ produto, onVerMais }: Props) {
+  return (
+    <div className="group rounded-xl border border-cinza bg-white p-6 hover:shadow-lg hover:border-verde/30 transition-all flex flex-col">
+      <div
+        className="h-40 rounded-lg bg-cover bg-center mb-4"
+        style={{ backgroundImage: `url('${produto.imagem}')` }}
+      />
+      <span
+        className={`inline-self-start mb-3 rounded-full px-3 py-1 text-xs font-semibold ${
+          produto.categoria === 'Individual'
+            ? 'bg-verde/10 text-verde'
+            : 'bg-laranja/10 text-laranja'
+        }`}
+      >
+        {produto.categoria}
+      </span>
+      <h3 className="text-lg font-semibold text-preto mb-2 leading-snug">
+        {produto.nome}
+      </h3>
+      <p className="text-sm text-cinza-escuro mb-4 flex-1 leading-relaxed">
+        {produto.descricao}
+      </p>
+      <button
+        onClick={() => onVerMais(produto)}
+        className="inline-flex items-center gap-2 text-sm font-semibold text-verde hover:text-laranja transition-colors mt-auto"
+      >
+        Ver mais <HiArrowRight size={16} />
+      </button>
+    </div>
+  )
+}
