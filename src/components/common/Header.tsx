@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { HiMenu, HiX } from 'react-icons/hi'
 import { BsWhatsapp } from 'react-icons/bs'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -6,9 +6,19 @@ import { NAV_LINKS, CONTATO } from '../../constants/contato'
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [activo, setActivo] = useState('/')
+
+  useEffect(() => {
+    setActivo(window.location.pathname)
+  }, [])
+
+  function isActivo(path: string) {
+    if (path === '/') return activo === '/'
+    return activo.startsWith(path)
+  }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-verde shadow-lg shadow-verde/20">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md shadow-gray-200">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
         <a href="/" className="flex items-center gap-3">
           <img
@@ -23,9 +33,19 @@ export default function Header() {
             <a
               key={link.to}
               href={link.to}
-              className="relative px-3 py-2 rounded-lg text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+              className={`relative px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                isActivo(link.to)
+                  ? 'text-verde'
+                  : 'text-preto/70 hover:text-verde hover:bg-cinza'
+              }`}
             >
               {link.label}
+              {isActivo(link.to) && (
+                <motion.span
+                  layoutId="nav-indicator"
+                  className="absolute -bottom-1 left-2 right-2 h-0.5 bg-verde rounded-full"
+                />
+              )}
             </a>
           ))}
         </nav>
@@ -44,7 +64,7 @@ export default function Header() {
 
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="lg:hidden p-2 rounded-lg text-white hover:bg-white/10"
+          className="lg:hidden p-2 rounded-lg text-preto hover:bg-cinza"
           aria-label="Abrir menu"
         >
           {menuOpen ? <HiX size={24} /> : <HiMenu size={24} />}
@@ -57,7 +77,7 @@ export default function Header() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden overflow-hidden bg-verde/95 border-t border-white/10"
+            className="lg:hidden overflow-hidden bg-white border-t border-cinza"
           >
             <div className="px-4 py-3 space-y-1">
               {NAV_LINKS.map((link) => (
@@ -65,17 +85,21 @@ export default function Header() {
                   key={link.to}
                   href={link.to}
                   onClick={() => setMenuOpen(false)}
-                  className="block px-3 py-2 rounded-lg text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 transition-colors"
+                  className={`block px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    isActivo(link.to)
+                      ? 'text-verde bg-verde/5'
+                      : 'text-preto/70 hover:text-verde hover:bg-cinza'
+                  }`}
                 >
                   {link.label}
                 </a>
               ))}
-              <hr className="border-white/10 my-2" />
+              <hr className="border-cinza my-2" />
               <a
                 href={CONTATO.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-laranja hover:bg-white/10"
+                className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-laranja hover:bg-cinza"
               >
                 <BsWhatsapp size={16} />
                 Solicitar Orçamento
