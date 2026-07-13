@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
             <img
-              src="/images/logo/logotipo.jpg-removebg.png"
+              src="/images/logo/logo-branco-com-fundo-removebg-preview.png"
               alt="ERCA"
               className="h-14 w-auto mb-4"
             />

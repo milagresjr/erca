@@ -22,9 +22,9 @@ export default function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 h-16">
         <a href="/" className="flex items-center gap-3">
           <img
-            src="/images/logo/logotipo.jpg-removebg.png"
+            src="/images/logo/logo-colorido-com-fundo-removebg-preview.png"
             alt="ERCA"
-            className="h-14 w-auto"
+            className="h-10 w-auto"
           />
         </a>
 

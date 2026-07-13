@@ -35,6 +35,15 @@ export default function Hero() {
 
       <div className="absolute inset-0 bg-gradient-to-r from-verde/90 via-verde/80 to-preto/70" />
 
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+        <img
+          src="/images/logo/logo-background-com-fundo-removebg-preview.png"
+          alt=""
+          className="max-w-sm h-auto opacity-10"
+          aria-hidden="true"
+        />
+      </div>
+
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
         {imagens.map((_, i) => (
           <button
@@ -50,11 +59,6 @@ export default function Hero() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
         <div className="max-w-3xl">
-          <img
-            src="/images/logo/logotipo.jpg-removebg.png"
-            alt="ERCA"
-            className="h-16 sm:h-20 w-auto mb-6"
-          />
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
             <span className="block text-laranja">
               Alimentando quem protege a nação
