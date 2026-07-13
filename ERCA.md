@@ -26,7 +26,7 @@ Rações Coletivas:
 
 **Contatos:**
 +244 924 622 786 / 926 757 823 / 922 471 058
-Email: geral.2023@ercangola.co.ao
+Email: geral@ercangola.co.ao
 NIF: 5001523732
 Endereço: Via Expressa - Urbanização Boa Vida, Loja Nº 96, Angola
 

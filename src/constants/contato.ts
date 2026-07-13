@@ -1,6 +1,6 @@
 export const CONTATO = {
   telefones: ['+244 924 622 786', '+244 926 757 823', '+244 922 471 058'],
-  email: 'geral.2023@ercangola.co.ao',
+  email: 'geral@ercangola.co.ao',
   nif: '5001523732',
   endereco: 'Via Expressa - Urbanização Boa Vida, Loja Nº 96, Angola',
   whatsapp: '+244924622786',
