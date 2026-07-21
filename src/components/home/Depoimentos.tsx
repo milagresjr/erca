@@ -47,7 +47,7 @@ export default function Depoimentos() {
             >
               <div className="flex gap-1 mb-4">
                 {Array.from({ length: dep.estrelas }).map((_, i) => (
-                  <HiStar key={i} className="text-laranja" size={18} />
+                  <HiStar key={i} className="text-verde" size={18} />
                 ))}
               </div>
               <p className="text-preto/80 leading-relaxed mb-6 italic">"{dep.texto}"</p>

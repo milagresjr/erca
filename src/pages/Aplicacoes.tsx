@@ -64,12 +64,12 @@ export default function Aplicacoes() {
         />
       </Helmet>
 
-      <section className="relative bg-verde py-24">
+      <section className="relative bg-azul py-24">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{
             backgroundImage:
-              "url('/images/desfile-militar01.jpg')",
+              "url('/images/bgs/bg4.png')",
           }}
         />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
@@ -90,7 +90,7 @@ export default function Aplicacoes() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="rounded-xl border border-cinza bg-white overflow-hidden hover:shadow-lg hover:border-verde/30 transition-all"
+                className="rounded-xl border border-cinza bg-white overflow-hidden hover:shadow-lg hover:border-azul/30 transition-all"
               >
                 <div className="h-40 bg-cinza flex items-center justify-center">
                   <HiCamera size={32} className="text-cinza-escuro/50" />
@@ -99,8 +99,8 @@ export default function Aplicacoes() {
                   <div className="text-3xl mb-3">{app.icone}</div>
                   <h3 className="text-xl font-bold text-preto mb-3">{app.titulo}</h3>
                   <p className="text-preto/80 leading-relaxed mb-4">{app.descricao}</p>
-                  <div className="rounded-lg bg-verde/5 px-4 py-2">
-                    <span className="text-xs font-semibold text-verde uppercase tracking-wider">
+                  <div className="rounded-lg bg-azul/5 px-4 py-2">
+                    <span className="text-xs font-semibold text-azul uppercase tracking-wider">
                       Produtos indicados:
                     </span>
                     <p className="text-sm text-preto/70 mt-1">{app.produtos}</p>
@@ -122,13 +122,13 @@ export default function Aplicacoes() {
 
           <div className="grid gap-8 md:grid-cols-2">
             <div className="rounded-xl bg-white p-8 shadow-sm border border-cinza">
-              <h3 className="text-2xl font-bold text-verde mb-6">Rações Individuais</h3>
+              <h3 className="text-2xl font-bold text-azul mb-6">Rações Individuais</h3>
               <ul className="space-y-4">
                 {produtos
                   .filter((p) => p.categoria === 'Individual')
                   .map((p) => (
                     <li key={p.id} className="flex items-start gap-3">
-                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-verde/10 text-verde text-sm font-bold">{p.nome.charAt(0)}</span>
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-azul/10 text-azul text-sm font-bold">{p.nome.charAt(0)}</span>
                       <div>
                         <p className="font-semibold text-preto">{p.nome}</p>
                         <p className="text-sm text-cinza-escuro">{p.descricao}</p>
@@ -139,13 +139,13 @@ export default function Aplicacoes() {
             </div>
 
             <div className="rounded-xl bg-white p-8 shadow-sm border border-cinza">
-              <h3 className="text-2xl font-bold text-verde mb-6">Rações Colectivas</h3>
+              <h3 className="text-2xl font-bold text-azul mb-6">Rações Colectivas</h3>
               <ul className="space-y-4">
                 {produtos
                   .filter((p) => p.categoria === 'Coletiva')
                   .map((p) => (
                     <li key={p.id} className="flex items-start gap-3">
-                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-verde/10 text-verde text-sm font-bold">{p.nome.charAt(0)}</span>
+                      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-azul/10 text-azul text-sm font-bold">{p.nome.charAt(0)}</span>
                       <div>
                         <p className="font-semibold text-preto">{p.nome}</p>
                         <p className="text-sm text-cinza-escuro">{p.descricao}</p>

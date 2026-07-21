@@ -95,7 +95,7 @@ export default function FormularioContato() {
                 type="text"
                 value={form.nome}
                 onChange={handleChange}
-                className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-verde ${
+                className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-azul ${
                   erros.nome ? 'border-red-400 bg-red-50' : 'border-cinza'
                 }`}
               />
@@ -114,7 +114,7 @@ export default function FormularioContato() {
                 type="email"
                 value={form.email}
                 onChange={handleChange}
-                className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-verde ${
+                className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-azul ${
                   erros.email ? 'border-red-400 bg-red-50' : 'border-cinza'
                 }`}
               />
@@ -133,7 +133,7 @@ export default function FormularioContato() {
                 type="text"
                 value={form.assunto}
                 onChange={handleChange}
-                className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-verde ${
+                className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-azul ${
                   erros.assunto ? 'border-red-400 bg-red-50' : 'border-cinza'
                 }`}
               />
@@ -152,7 +152,7 @@ export default function FormularioContato() {
                 rows={5}
                 value={form.mensagem}
                 onChange={handleChange}
-                className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-verde resize-none ${
+                className={`w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-azul resize-none ${
                   erros.mensagem ? 'border-red-400 bg-red-50' : 'border-cinza'
                 }`}
               />
@@ -163,7 +163,7 @@ export default function FormularioContato() {
 
             <button
               type="submit"
-              className="inline-flex items-center gap-2 bg-verde text-white px-6 py-3 rounded-lg font-semibold hover:bg-verde/80 transition-colors"
+              className="inline-flex items-center gap-2 bg-azul text-white px-6 py-3 rounded-lg font-semibold hover:bg-azul/80 transition-colors"
             >
               <HiPaperAirplane size={16} />
               Enviar Mensagem
@@ -173,7 +173,7 @@ export default function FormularioContato() {
               <motion.p
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-verde text-sm font-medium"
+                className="text-azul text-sm font-medium"
               >
                 Mensagem enviada com sucesso! Entraremos em contacto.
               </motion.p>
@@ -188,7 +188,7 @@ export default function FormularioContato() {
           >
             <div className="rounded-xl bg-cinza p-6 space-y-6">
               <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-verde/10 text-verde flex-shrink-0">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-azul/10 text-azul flex-shrink-0">
                   <HiPhone size={20} />
                 </div>
                 <div>
@@ -200,14 +200,14 @@ export default function FormularioContato() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-verde/10 text-verde flex-shrink-0">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-azul/10 text-azul flex-shrink-0">
                   <HiMail size={20} />
                 </div>
                 <div>
                   <h4 className="font-semibold text-preto mb-1">Email</h4>
                   <a
                     href={`mailto:${CONTATO.email}`}
-                    className="text-sm text-cinza-escuro hover:text-verde"
+                    className="text-sm text-cinza-escuro hover:text-azul"
                   >
                     {CONTATO.email}
                   </a>
@@ -215,7 +215,7 @@ export default function FormularioContato() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-verde/10 text-verde flex-shrink-0">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-azul/10 text-azul flex-shrink-0">
                   <HiMapPin size={20} />
                 </div>
                 <div>

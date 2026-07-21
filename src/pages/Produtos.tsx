@@ -25,12 +25,12 @@ export default function Produtos() {
         />
       </Helmet>
 
-      <section className="relative bg-verde py-24">
+      <section className="relative bg-azul py-24">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{
             backgroundImage:
-              "url('/images/militares02.jpeg')",
+              "url('/images/bgs/bg3.jpeg')",
           }}
         />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
@@ -50,8 +50,8 @@ export default function Produtos() {
                 onClick={() => setFiltro(cat)}
                 className={`px-6 py-2.5 rounded-lg text-sm font-semibold transition-colors ${
                   filtro === cat
-                    ? 'bg-verde text-white shadow-md'
-                    : 'bg-white text-preto/70 border border-cinza hover:border-verde/30'
+                    ? 'bg-azul text-white shadow-md'
+                    : 'bg-white text-preto/70 border border-cinza hover:border-azul/30'
                 }`}
               >
                 {cat === 'Todas' ? 'Todas as Categorias' : cat}

@@ -26,7 +26,7 @@ const items = [
 
 export default function Diferenciais() {
   return (
-    <section className="py-20 bg-verde/5">
+    <section className="py-20 bg-azul/5">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-preto mb-4">
@@ -45,9 +45,9 @@ export default function Diferenciais() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group rounded-xl border border-verde/10 bg-white p-6 text-center hover:border-verde/30 hover:shadow-lg hover:shadow-verde/5 transition-all"
+              className="group rounded-xl border border-azul/10 bg-white p-6 text-center hover:border-azul/30 hover:shadow-lg hover:shadow-azul/5 transition-all"
             >
-              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-verde text-white group-hover:bg-laranja transition-colors">
+              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-lg bg-azul text-white group-hover:bg-verde transition-colors">
                 <item.icone size={28} />
               </div>
               <h3 className="text-lg font-semibold text-preto mb-2">{item.titulo}</h3>

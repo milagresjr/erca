@@ -12,12 +12,12 @@ export default function Contactos() {
         />
       </Helmet>
 
-      <section className="relative bg-verde py-24">
+      <section className="relative bg-azul py-24">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
           style={{
             backgroundImage:
-              "url('/images/others/image.jpg')",
+              "url('/images/bgs/bg6.png')",
           }}
         />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">

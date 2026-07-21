@@ -33,8 +33,8 @@ export default function ProdutosList() {
               onClick={() => setFiltro(cat)}
               className={`px-5 py-2 rounded-lg text-sm font-semibold transition-colors ${
                 filtro === cat
-                  ? 'bg-verde text-white'
-                  : 'bg-white text-preto/70 border border-cinza hover:border-verde/30'
+                  ? 'bg-azul text-white'
+                  : 'bg-white text-preto/70 border border-cinza hover:border-azul/30'
               }`}
             >
               {cat === 'Todas' ? 'Todas' : cat}

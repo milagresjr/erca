@@ -9,15 +9,15 @@ interface Props {
 
 export default function ProdutoCard({ produto, onVerMais }: Props) {
   return (
-    <div className="group rounded-xl border border-cinza bg-white p-6 hover:shadow-lg hover:border-verde/30 transition-all flex flex-col">
+    <div className="group rounded-xl border border-cinza bg-white p-6 hover:shadow-lg hover:border-azul/30 transition-all flex flex-col">
       <div className="h-40 rounded-lg bg-cinza mb-4 flex items-center justify-center">
         <HiCamera size={32} className="text-cinza-escuro/50" />
       </div>
       <span
         className={`inline-self-start mb-3 rounded-full px-3 py-1 text-xs font-semibold ${
           produto.categoria === 'Individual'
-            ? 'bg-verde/10 text-verde'
-            : 'bg-laranja/10 text-laranja'
+            ? 'bg-azul/10 text-azul'
+            : 'bg-verde/10 text-verde'
         }`}
       >
         {produto.categoria}
@@ -30,7 +30,7 @@ export default function ProdutoCard({ produto, onVerMais }: Props) {
       </p>
       <button
         onClick={() => onVerMais(produto)}
-        className="inline-flex items-center gap-2 text-sm font-semibold text-verde hover:text-laranja transition-colors mt-auto"
+        className="inline-flex items-center gap-2 text-sm font-semibold text-azul hover:text-verde transition-colors mt-auto"
       >
         Ver mais <HiArrowRight size={16} />
       </button>

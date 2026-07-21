@@ -23,7 +23,7 @@ export default function Footer() {
                 <li key={link.to}>
                   <a
                     href={link.to}
-                    className="text-sm text-cinza-escuro hover:text-laranja transition-colors"
+                    className="text-sm text-cinza-escuro hover:text-verde transition-colors"
                   >
                     {link.label}
                   </a>
@@ -41,7 +41,7 @@ export default function Footer() {
               <li>
                 <a
                   href={`mailto:${CONTATO.email}`}
-                  className="text-cinza-escuro hover:text-laranja transition-colors"
+                  className="text-cinza-escuro hover:text-verde transition-colors"
                 >
                   {CONTATO.email}
                 </a>
@@ -56,8 +56,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-8 border-t border-verde/20 text-center">
-          <p className="text-sm text-laranja font-semibold mb-2">
+        <div className="mt-10 pt-8 border-t border-azul/20 text-center">
+          <p className="text-sm text-verde font-semibold mb-2">
             {CONTATO.slogan}
           </p>
           <p className="text-xs text-cinza-escuro">

@@ -52,8 +52,8 @@ export default function ProdutoModal({ produto, onFechar }: Props) {
             <span
               className={`inline-block rounded-full px-3 py-1 text-xs font-semibold mb-3 ${
                 produto.categoria === 'Individual'
-                  ? 'bg-verde/10 text-verde'
-                  : 'bg-laranja/10 text-laranja'
+                  ? 'bg-azul/10 text-azul'
+                  : 'bg-verde/10 text-verde'
               }`}
             >
               {produto.categoria}
@@ -68,7 +68,7 @@ export default function ProdutoModal({ produto, onFechar }: Props) {
                   key={spec}
                   className="flex items-center gap-2 text-sm text-preto/80"
                 >
-                  <span className="h-1.5 w-1.5 rounded-full bg-verde flex-shrink-0" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-azul flex-shrink-0" />
                   {spec}
                 </li>
               ))}
@@ -78,7 +78,7 @@ export default function ProdutoModal({ produto, onFechar }: Props) {
               href={CONTATO.whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full text-center bg-laranja text-white py-3 rounded-lg font-semibold hover:bg-laranja/80 transition-colors"
+              className="block w-full text-center bg-verde text-white py-3 rounded-lg font-semibold hover:bg-verde/80 transition-colors"
             >
               Solicitar Orçamento
             </a>

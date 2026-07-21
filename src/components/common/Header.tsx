@@ -35,15 +35,15 @@ export default function Header() {
               href={link.to}
               className={`relative px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                 isActivo(link.to)
-                  ? 'text-verde'
-                  : 'text-preto/70 hover:text-verde hover:bg-cinza'
+                  ? 'text-azul'
+                  : 'text-preto/70 hover:text-azul hover:bg-cinza'
               }`}
             >
               {link.label}
               {isActivo(link.to) && (
                 <motion.span
                   layoutId="nav-indicator"
-                  className="absolute -bottom-1 left-2 right-2 h-0.5 bg-verde rounded-full"
+                  className="absolute -bottom-1 left-2 right-2 h-0.5 bg-azul rounded-full"
                 />
               )}
             </a>
@@ -55,7 +55,7 @@ export default function Header() {
             href={CONTATO.whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-laranja text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-laranja/80 transition-colors"
+            className="inline-flex items-center gap-2 bg-azul text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-azul/80 transition-colors"
           >
             <BsWhatsapp size={16} />
             Solicitar Orçamento
@@ -87,8 +87,8 @@ export default function Header() {
                   onClick={() => setMenuOpen(false)}
                   className={`block px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                     isActivo(link.to)
-                      ? 'text-verde bg-verde/5'
-                      : 'text-preto/70 hover:text-verde hover:bg-cinza'
+                      ? 'text-azul bg-azul/5'
+                      : 'text-preto/70 hover:text-azul hover:bg-cinza'
                   }`}
                 >
                   {link.label}
@@ -99,7 +99,7 @@ export default function Header() {
                 href={CONTATO.whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-laranja hover:bg-cinza"
+                className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-semibold text-azul hover:bg-cinza"
               >
                 <BsWhatsapp size={16} />
                 Solicitar Orçamento
