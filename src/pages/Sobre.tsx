@@ -37,7 +37,7 @@ function PCASlider() {
           <motion.img
             key={imagensPCA[atual]}
             src={imagensPCA[atual]}
-            alt="Titilson Dias"
+            alt="Tetilson Dias"
             className="absolute inset-0 w-full h-full object-cover"
             initial={{ opacity: 0, scale: 1.1 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -172,14 +172,14 @@ export default function Sobre() {
                 viewport={{ once: true }}
               >
                 <h3 className="text-2xl font-bold text-preto mb-1">
-                  Titilson Dias
+                  Tetilson Dias
                 </h3>
                 <p className="text-verde font-semibold mb-4">
-                  Presidente do Conselho de Administração (PCA)
+                  CEO - Chief Executive Officer
                 </p>
                 <p className="text-preto/80 leading-relaxed mb-4">
                   Com mais de 12 anos de experiência na produção de rações de
-                  combate e gestão de segurança alimentar, Titilson Dias lidera
+                  combate e gestão de segurança alimentar, Tetilson Dias lidera
                   a ERCA com visão estratégica e compromisso com a excelência. A
                   sua trajectória inclui a implementação de sistemas de
                   qualidade ISO 22000 e HACCP, e o desenvolvimento de soluções
