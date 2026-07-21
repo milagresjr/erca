@@ -18,11 +18,13 @@ jobs:
 
       - run: npm run build
 
-      - uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          username: 'ercaango'
-          server: 'ercaangola.co.ao'
-          port: '22'
-          ssh_private_key: ${{ secrets.SFTP_PRIVATE_KEY }}
-          local_path: './dist/'
-          remote_path: '/public_html'
+      - name: Deploy via SFTP
+        run: |
+          echo "${{ secrets.SFTP_PRIVATE_KEY }}" > /tmp/ssh_key
+          chmod 600 /tmp/ssh_key
+          lftp -c "
+            set sftp:auto-confirm yes
+            set sftp:connect-program 'ssh -a -x -i /tmp/ssh_key'
+            open -u ercaango, -p 22 sftp://ercaangola.co.ao
+            mirror -R --delete --verbose ./dist/ ./public_html/
+          "
