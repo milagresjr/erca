@@ -1,6 +1,79 @@
+import { useState, useEffect, useCallback } from "react";
 import { Helmet } from "react-helmet-async";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { CONTATO } from "../constants/contato";
+
+const imagensPCA = [
+  "/images/others/pca-erca.jpg",
+  "/images/others/erca-pca1.jpeg",
+  "/images/others/erca-pca2.jpeg",
+];
+
+function PCASlider() {
+  const [atual, setAtual] = useState(0);
+
+  const proxima = useCallback(() => {
+    setAtual((prev) => (prev + 1) % imagensPCA.length);
+  }, []);
+
+  const anterior = useCallback(() => {
+    setAtual((prev) => (prev - 1 + imagensPCA.length) % imagensPCA.length);
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(proxima, 4000);
+    return () => clearInterval(timer);
+  }, [proxima]);
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: -30 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      className="relative rounded-xl overflow-hidden group"
+    >
+      <div className="aspect-[3/4] relative">
+        <AnimatePresence mode="wait">
+          <motion.img
+            key={imagensPCA[atual]}
+            src={imagensPCA[atual]}
+            alt="Titilson Dias"
+            className="absolute inset-0 w-full h-full object-cover"
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.5 }}
+          />
+        </AnimatePresence>
+      </div>
+
+      <button
+        onClick={anterior}
+        className="absolute left-2 top-1/2 -translate-y-1/2 bg-preto/50 hover:bg-preto/70 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+      >
+        ‹
+      </button>
+      <button
+        onClick={proxima}
+        className="absolute right-2 top-1/2 -translate-y-1/2 bg-preto/50 hover:bg-preto/70 text-white rounded-full w-8 h-8 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+      >
+        ›
+      </button>
+
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+        {imagensPCA.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setAtual(i)}
+            className={`w-2 h-2 rounded-full transition-all ${
+              i === atual ? "bg-white scale-125" : "bg-white/50"
+            }`}
+          />
+        ))}
+      </div>
+    </motion.div>
+  );
+}
 
 export default function Sobre() {
   return (
@@ -91,19 +164,7 @@ export default function Sobre() {
 
           <div className="max-w-4xl mx-auto">
             <div className="grid gap-10 items-center md:grid-cols-[300px_1fr]">
-              <motion.div
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                className="rounded-xl overflow-hidden"
-              >
-                <img
-                  src="/images/others/pca-erca.jpg"
-                  alt="Titilson Dias"
-                  className="w-full h-auto object-cover"
-                  loading="lazy"
-                />
-              </motion.div>
+              <PCASlider />
 
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
