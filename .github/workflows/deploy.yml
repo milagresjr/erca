@@ -1,0 +1,28 @@
+name: Deploy to cPanel
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          username: ${{ secrets.FTP_USER }}
+          server: ${{ secrets.FTP_HOST }}
+          port: '22'
+          ssh_private_key: ${{ secrets.SFTP_PRIVATE_KEY }}
+          local_path: './dist/'
+          remote_path: '/public_html'
