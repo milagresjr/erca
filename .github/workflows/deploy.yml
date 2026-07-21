@@ -20,8 +20,8 @@ jobs:
 
       - uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
-          username: ${{ secrets.FTP_USER }}
-          server: ${{ secrets.FTP_HOST }}
+          username: 'ercaango'
+          server: 'ercaangola.co.ao'
           port: '22'
           ssh_private_key: ${{ secrets.SFTP_PRIVATE_KEY }}
           local_path: './dist/'
