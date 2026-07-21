@@ -3,8 +3,8 @@ export const CONTATO = {
   email: 'geral@ercangola.co.ao',
   nif: '5001523732',
   endereco: 'Via Expressa - Urbanização Boa Vida, Loja Nº 96, Angola',
-  whatsapp: '+244924622786',
-  whatsappLink: 'https://wa.me/244924622786',
+  whatsapp: '+244926757823',
+  whatsappLink: 'https://wa.me/244926757823',
   slogan: 'ERCA - Alimentando quem protege a nação',
 }
 
