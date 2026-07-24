@@ -114,13 +114,13 @@ export default function Sobre() {
               <h2 className="text-3xl font-bold text-preto mb-6">
                 Nossa História
               </h2>
-              <p className="text-preto/80 leading-relaxed mb-6">
+              <p className="text-preto/80 leading-relaxed mb-6 text-justify">
                 A ERCA - Empresa de Rações de Combate de Angola nasceu da
                 necessidade de fornecer alimentação de alto valor nutricional e
                 energético para as Forças Armadas Angolanas, em operações de
                 defesa, missões de paz e situações de emergência.
               </p>
-              <p className="text-preto/80 leading-relaxed mb-6">
+              <p className="text-preto/80 leading-relaxed mb-6 text-justify">
                 Com produção 100% nacional, a ERCA orgulha-se de ser uma empresa
                 que contribui directamente para a segurança e soberania
                 alimentar do país, empregando trabalhadores militares treinados
@@ -138,12 +138,12 @@ export default function Sobre() {
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="rounded-xl overflow-hidden h-96"
+              className="rounded-xl overflow-hidden"
             >
               <img
                 src="/images/about/Asset 1.png"
                 alt="ERCA"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
                 loading="lazy"
               />
             </motion.div>
@@ -177,7 +177,7 @@ export default function Sobre() {
                 <p className="text-verde font-semibold mb-4">
                   CEO - Chief Executive Officer
                 </p>
-                <p className="text-preto/80 leading-relaxed mb-4">
+                <p className="text-preto/80 leading-relaxed mb-4 text-justify">
                   Com mais de 12 anos de experiência na produção de rações de
                   combate e gestão de segurança alimentar, Tetilson Dias lidera
                   a ERCA com visão estratégica e compromisso com a excelência. A
@@ -226,7 +226,7 @@ export default function Sobre() {
                 <h3 className="text-xl font-bold text-azul mb-4">
                   {item.titulo}
                 </h3>
-                <p className="text-preto/80 leading-relaxed">
+<p className="text-preto/80 leading-relaxed text-justify">
                   {item.descricao}
                 </p>
               </motion.div>
