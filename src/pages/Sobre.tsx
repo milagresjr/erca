@@ -116,7 +116,7 @@ export default function Sobre() {
                 <p className="text-verde font-semibold mb-4">
                   PCA - Presidente do Conselho de Administração
                 </p>
-                <p className="text-preto/80 leading-relaxed mb-4 text-justify">
+                <p className="text-preto/80 leading-relaxed text-justify">
                   Com mais de 12 anos de experiência na produção de rações de
                   combate e gestão de segurança alimentar, Tetilson Dias lidera
                   a ERCA com visão estratégica e compromisso com a excelência. A
@@ -125,10 +125,6 @@ export default function Sobre() {
                   nutricionais adaptadas às exigências das Forças Armadas
                   Angolanas.
                 </p>
-                <div className="flex items-center gap-2 text-preto/70">
-                  <span className="text-lg">📞</span>
-                  <span>+244 926 757 823</span>
-                </div>
               </motion.div>
             </div>
           </div>
